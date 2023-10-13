@@ -20,6 +20,15 @@ const server = http.createServer((request, response) => {
         response.end(data);
       }
     });
+  } else if (request.method === 'GET' && request.url === '/dutchPay') {
+    response.writeHead(200, contentType);
+    fs.readFile('dutch-pay.html', (err, data) => {
+      if (err) {
+        console.log('호출 에러');
+      } else {
+        response.end(data);
+      }
+    });
   } else {
     response.writeHead(404, contentType);
     response.end('<h1>요청 페이지를 찾을 수 없습니다</h1>');
