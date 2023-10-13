@@ -25,3 +25,7 @@ const server = http.createServer((request, response) => {
     response.end('<h1>요청 페이지를 찾을 수 없습니다</h1>');
   }
 });
+
+server.listen(8080, () => {
+  console.log('서버 가동중');
+});
