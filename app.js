@@ -12,12 +12,25 @@ const contentType = {
 //* 서버 생성
 const server = http.createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/') {
+    // console.log(response.writeHead);
+    // fs.readFile('index.html', (err, data) => {
+    //   if (err) {
+    //     console.log('호출 에러');
+    //   } else {
+    //     response.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+    //     response.end(data);
+    //   }
+    // });
+  }
+  if (request.method === 'GET' && request.url === '/sub') {
     response.writeHead(200, contentType);
-    fs.readFile('index.html', (err, data) => {
-      if (err) {
+    fs.readFile('dutch-pay.html', (errs, datas) => {
+      if (errs) {
         console.log('호출 에러');
       } else {
-        response.end(data);
+        response.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+
+        response.end(datas);
       }
     });
   } else {
