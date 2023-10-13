@@ -8,3 +8,20 @@ const contentType = {
   'Content-Type': 'text/html',
   charset: 'utf-8',
 };
+
+//* 서버 생성
+const server = http.createServer((request, response) => {
+  if (request.method === 'GET' && request.url === '/') {
+    response.writeHead(200, contentType);
+    fs.readFile('index.html', (err, data) => {
+      if (err) {
+        console.log('호출 에러');
+      } else {
+        response.end(data);
+      }
+    });
+  } else {
+    response.writeHead(404, contentType);
+    response.end('<h1>요청 페이지를 찾을 수 없습니다</h1>');
+  }
+});
