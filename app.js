@@ -4,15 +4,15 @@ const http = require('http');
 //* index.html 모듈 가져올 수 있게 file system Fs 변수 생성
 const fs = require('fs');
 
-const contentType = {
-  'Content-Type': 'text/html',
-  charset: 'utf-8',
-};
+// const contentType = {
+//   'Content-Type': 'text/html; charset = utf-8'
+// };
 
 //* 서버 생성
 const server = http.createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/') {
-    response.writeHead(200, contentType);
+    response.writeHead(200, {"Content-Type":"text/html; charset= utf-8"});
+    // response.writeHead(200, contentType);
     fs.readFile('index.html', (err, data) => {
       if (err) {
         console.log('호출 에러');
@@ -21,7 +21,8 @@ const server = http.createServer((request, response) => {
       }
     });
   } else if (request.method === 'GET' && request.url === '/dutchPay') {
-    response.writeHead(200, contentType);
+    response.writeHead(200, {"Content-Type":"text/html; charset= utf-8"});
+    // response.writeHead(200, contentType);
     fs.readFile('dutch-pay.html', (err, data) => {
       if (err) {
         console.log('호출 에러');
@@ -30,7 +31,8 @@ const server = http.createServer((request, response) => {
       }
     });
   } else {
-    response.writeHead(404, contentType);
+    response.writeHead(404, {"Content-Type":"text/html; charset= utf-8"});
+    // response.writeHead(404, contentType);
     response.end('<h1>요청 페이지를 찾을 수 없습니다</h1>');
   }
 });
