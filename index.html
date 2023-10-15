@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
@@ -18,16 +18,27 @@
         align-items: center;
         background-color: #57c7ba;
       }
-      #root > :nth-child(1) {
-        width: 40vw;
-        height: 10vh;
+      #root > div:nth-child(1) {
+        width: 65vw;
+        height: 10vh;  
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: #f6ef3b;
+        text-align: center;             
+      }
+      #root > div:nth-child(1) > a {
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: black;
       }
     </style>
   </head>
   <body>
     <div id="root">
-      <a href="http://localhost:8080/dutchPay">더치페이 계산기</a>
+      <div>
+        <a href="http://localhost:8080/dutchPay">더치페이 계산기</a>
+      </div>
     </div>
   </body>
 </html>
