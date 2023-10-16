@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(C:\Users\tmdal\Desktop\kdt-class\project\alcohol-dutch-pay\public\images\pngtree-blue-sky-and-white-clouds-pure-sky-image_786707.jpg);
+  background-color: #57c7ba;
 }
 #root > div:nth-child(1) {
   width: 65vw;
@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(C:\Users\tmdal\Desktop\kdt-class\project\alcohol-dutch-pay\public\images\penguin.png);
+  background-color: #f6ef3b;
   text-align: center;             
 }
 #root > div:nth-child(1) > a {
