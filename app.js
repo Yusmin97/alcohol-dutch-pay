@@ -8,10 +8,10 @@ const fs = require('fs');
 //   'Content-Type': 'text/html; charset = utf-8'
 // };
 
-const express = require('express')
-const app = express()
+// const express = require('express')
+// const app = express()
 
-app.use(express.static('public'))
+// app.use(express.static('public'))
 
 //* 서버 생성
 const server = http.createServer((request, response) => {
