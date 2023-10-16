@@ -35,6 +35,16 @@ const server = http.createServer((request, response) => {
         response.end(data);
       }
     });
+  } else if (request.method === 'GET' && request.url === '/public/images/.jpeg') {
+    // response.writeHead(200, contentType);
+    fs.readFile('.jpeg', (err, data) => {
+      if (err) {
+        console.log('호출 에러');
+      } else {
+        response.writeHead(200, {"Content-Type":"image/jpeg; charset= utf-8"});
+        response.end(data);
+      }
+    });
   } else if (request.method === 'GET' && request.url === '/dutchPay'){
     fs.readFile('dutch-pay.html', (err, data) => {
       if (err) {
