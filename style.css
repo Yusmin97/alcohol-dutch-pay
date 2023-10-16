@@ -9,7 +9,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #57c7ba;
+  background-image: url(public/images/pngtree-blue-sky-and-white-clouds-pure-sky-image_786707.jpg);
+  background-size: cover;
+  background-position: center;
 }
 #root > div:nth-child(1) {
   width: 65vw;
@@ -17,7 +19,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f6ef3b;
+  background-color: azure;
+  background-size: cover;
+  background-position: center;
   text-align: center;             
 }
 #root > div:nth-child(1) > a {
