@@ -53,7 +53,7 @@ const server = http.createServer((request, response) => {
       if (err) {
         console.log('호출 에러');
       } else {
-        response.writeHead(200, { 'Content-Type': 'image/jpg; charset= utf-8' });
+        response.writeHead(200, { 'Content-Type': 'image/jpeg; charset= utf-8'});
         response.end(data);
       }
     });
