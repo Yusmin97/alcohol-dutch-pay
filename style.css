@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #57c7ba;
+}
+#root > div:nth-child(1) {
+  width: 65vw;
+  height: 10vh;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6ef3b;
+  text-align: center;             
+}
+#root > div:nth-child(1) > a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: black;
+}
