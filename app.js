@@ -11,22 +11,22 @@ const fs = require('fs');
 //* 서버 생성
 const server = http.createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/') {
-    response.writeHead(200, {"Content-Type":"text/html; charset= utf-8"});
     // response.writeHead(200, contentType);
     fs.readFile('index.html', (err, data) => {
       if (err) {
         console.log('호출 에러');
       } else {
+        response.writeHead(200, {"Content-Type":"text/html; charset= utf-8"});
         response.end(data);
       }
     });
   } else if (request.method === 'GET' && request.url === '/dutchPay') {
-    response.writeHead(200, {"Content-Type":"text/html; charset= utf-8"});
     // response.writeHead(200, contentType);
     fs.readFile('dutch-pay.html', (err, data) => {
       if (err) {
         console.log('호출 에러');
       } else {
+        response.writeHead(200, {"Content-Type":"text/html; charset= utf-8"});
         response.end(data);
       }
     });
