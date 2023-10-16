@@ -60,7 +60,7 @@ const server = http.createServer((request, response) => {
       if (err) {
         console.log('호출 에러');
       } else {
-        response.writeHead(200, { 'Content-Type': 'image/png; charset= utf-8'});
+        response.writeHead(200, contentT[2]);
         response.end(data);
       }
     });
@@ -70,7 +70,7 @@ const server = http.createServer((request, response) => {
       if (err) {
         console.log('호출 에러');
       } else {
-        response.writeHead(200, contentT[2]);
+        response.writeHead(200, contentT[0]);
         response.end(data);
       }
     });
