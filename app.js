@@ -20,8 +20,17 @@ const server = http.createServer((request, response) => {
         response.end(data);
       }
     });
-  } else if (request.method === 'GET' && request.url === '/dutchPay') {
+  } else if (request.method === 'GET' && request.url === '/style.css') {
     // response.writeHead(200, contentType);
+    fs.readFile('style.css', (err, data) => {
+      if (err) {
+        console.log('호출 에러');
+      } else {
+        response.writeHead(200, {"Content-Type":"text/css; charset= utf-8"});
+        response.end(data);
+      }
+    });
+  } else if (request.method === 'GET' && request.url === '/dutchPay'){
     fs.readFile('dutch-pay.html', (err, data) => {
       if (err) {
         console.log('호출 에러');
@@ -30,7 +39,8 @@ const server = http.createServer((request, response) => {
         response.end(data);
       }
     });
-  } else {
+  } 
+  else {
     response.writeHead(404, {"Content-Type":"text/html; charset= utf-8"});
     // response.writeHead(404, contentType);
     response.end('<h1>요청 페이지를 찾을 수 없습니다</h1>');
