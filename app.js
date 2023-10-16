@@ -50,7 +50,20 @@ const server = http.createServer((request, response) => {
         response.end(data);
       }
     });
+  } 
+  //* parse를 이용한 외부 css 값 가져오는 조건문
+  else if (request.method === 'GET' && pathname === '/style.css') {
+    // response.writeHead(200, contentType);
+    fs.readFile('style.css', (err, data) => {
+      if (err) {
+        console.log('호출 에러');
+      } else {
+        response.writeHead(200, contentT[1]);
+        response.end(data);
+      }
+    });
   }
+
   //* 폴더네 이미지 파일 가져오는 조건문
   else if (pageURL.startsWith('/public/images/')) {
     let imageName = path.basename(request.url);
