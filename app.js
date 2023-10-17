@@ -28,7 +28,7 @@ const server = http.createServer((request, response) => {
   let pageURL = request.url;
   let pathname = url.parse(pageURL, true).pathname;
 //* 메인 페이지 조건문
-  if (request.method === 'GET' && request.url === '/') {
+  if (request.method === 'GET' && pageURL === '/') {
     // response.writeHead(200, contentType);
     fs.readFile('index.html', (err, data) => {
       if (err) {
@@ -52,9 +52,9 @@ const server = http.createServer((request, response) => {
   //   });
   // } 
   //* parse를 이용한 외부 css 값 가져오는 조건문
-  else if (request.method === 'GET' && pathname === '/style.css') {
+  else if (request.method === 'GET' && pageURL === '/static/css/style.css') {
     // response.writeHead(200, contentType);
-    fs.readFile('style.css', (err, data) => {
+    fs.readFile('./static/css/style.css', (err, data) => {
       if (err) {
         console.log('호출 에러');
       } else {
@@ -80,7 +80,7 @@ const server = http.createServer((request, response) => {
       }
     });
     //* 기능 페이지 제작
-  } else if (request.method === 'GET' && request.url === '/dutchPay') {
+  } else if (request.method === 'GET' && pageURL === '/dutchPay') {
     fs.readFile('dutch-pay.html', (err, data) => {
       if (err) {
         console.log('호출 에러');
@@ -89,9 +89,9 @@ const server = http.createServer((request, response) => {
         response.end(data);
       }
     });
-  } else if (request.method === 'GET' && pathname === '/dutch-style.css') {
+  } else if (request.method === 'GET' && pageURL === '/static/css/dutch-style.css') {
     // response.writeHead(200, contentType);
-    fs.readFile('dutch-style.css', (err, data) => {
+    fs.readFile('./static/css/dutch-style.css', (err, data) => {
       if (err) {
         console.log('호출 에러');
       } else {
