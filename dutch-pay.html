@@ -17,6 +17,7 @@
       <input type="button" id="btn" value="버튼" />
     </div>
     <script>
+      const root = document.getElementById('root')
       const people = document.getElementById('people');
       const food = document.getElementById('food');
       const alcoholPeople = document.getElementById('alcoholPeople');
@@ -24,6 +25,20 @@
       const drinkPeople = document.getElementById('drinkPeople');
       const drink = document.getElementById('drink');
       const btn = document.getElementById('btn');
+
+      btn.addEventListener('click', (event) => {
+        const li = document.createElement('li');
+        let numString = main.value
+        li.textContent = numString
+        root.appendChild(li);
+        numString.value = '';
+
+        function main() {
+          if (food / people) {
+          }
+        }
+        main()
+      });
     </script>
   </body>
 </html>
