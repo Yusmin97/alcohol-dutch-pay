@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./static/css/dutch-style.css">
+    <link rel="stylesheet" href="./static/css/dutch-style.css" />
   </head>
   <body>
     <div id="root">
-      <input type="number" min="2" max="20" id="people" placeholder="전체 인원">
-      <input type="number" id="food" placeholder="음식">
-      <input type="number" min="2" max="20" id="alcoholPeople" placeholder="술 인원">
-      <input type="number" id="alcohol" placeholder="술값" value="술">
-      <input type="number" min="2" max="20" id="drinkPeople" placeholder="음료 인원">
-      <input type="number" id="drink" placeholder="음료값" value="음료">
-      <input type="button" id="btn" value="버튼">
+      <input type="number" min="2" max="20" id="people" placeholder="전체 인원" />
+      <input type="number" id="food" placeholder="음식" />
+      <input type="number" min="2" max="20" id="alcoholPeople" placeholder="술 인원" />
+      <input type="number" id="alcohol" placeholder="술값" value="술" />
+      <input type="number" min="2" max="20" id="drinkPeople" placeholder="음료 인원" />
+      <input type="number" id="drink" placeholder="음료값" value="음료" />
+      <input type="button" id="btn" value="버튼" />
     </div>
-    
+    <script>
+      const people = document.getElementById('people');
+      const food = document.getElementById('food');
+      const alcoholPeople = document.getElementById('alcoholPeople');
+      const alcohol = document.getElementById('alcohol');
+      const drinkPeople = document.getElementById('drinkPeople');
+      const drink = document.getElementById('drink');
+      const btn = document.getElementById('btn');
+    </script>
   </body>
 </html>
