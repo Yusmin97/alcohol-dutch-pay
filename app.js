@@ -40,17 +40,17 @@ const server = http.createServer((request, response) => {
     });
   }
   //* 강사님 방식(외부 css 값 가져오는 조건문)
-  else if (request.method === 'GET' && request.url === '/style.css') {
-    // response.writeHead(200, contentType);
-    fs.readFile('style.css', (err, data) => {
-      if (err) {
-        console.log('호출 에러');
-      } else {
-        response.writeHead(200, contentT[1]);
-        response.end(data);
-      }
-    });
-  } 
+  // else if (request.method === 'GET' && request.url === '/style.css') {
+  //   // response.writeHead(200, contentType);
+  //   fs.readFile('style.css', (err, data) => {
+  //     if (err) {
+  //       console.log('호출 에러');
+  //     } else {
+  //       response.writeHead(200, contentT[1]);
+  //       response.end(data);
+  //     }
+  //   });
+  // } 
   //* parse를 이용한 외부 css 값 가져오는 조건문
   else if (request.method === 'GET' && pathname === '/style.css') {
     // response.writeHead(200, contentType);
@@ -65,8 +65,10 @@ const server = http.createServer((request, response) => {
   }
 
   //* 폴더네 이미지 파일 가져오는 조건문
+  //* startsWith 메서드를 사용하는 이유는 ~로 시작하면 으로 이 폴더로 시작하면 폴더의 파일 이름 값을 가져 올 수 있게 해준다.
   else if (pageURL.startsWith('/public/images/')) {
-    let imageName = path.basename(request.url);
+    console.log(pageURL.startsWith('/public/images/'))
+    let imageName = path.basename(pageURL);
     let imagePath = './public/images/' + imageName;
     // response.writeHead(200, contentType);
     fs.readFile(imagePath, (err, data) => {
@@ -87,7 +89,18 @@ const server = http.createServer((request, response) => {
         response.end(data);
       }
     });
-  } else {
+  } else if (request.method === 'GET' && pathname === '/dutch-style.css') {
+    // response.writeHead(200, contentType);
+    fs.readFile('dutch-style.css', (err, data) => {
+      if (err) {
+        console.log('호출 에러');
+      } else {
+        response.writeHead(200, contentT[1]);
+        response.end(data);
+      }
+    });
+  } 
+  else {
     response.writeHead(404, { 'Content-Type': 'text/html; charset= utf-8' });
     // response.writeHead(404, contentType);
     response.end('<h1>요청 페이지를 찾을 수 없습니다</h1>');
