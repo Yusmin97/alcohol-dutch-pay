@@ -27,25 +27,21 @@
         let alcohol = document.getElementById('alcohol').value;
         let drinkPeople = document.getElementById('drinkPeople').value;
         let drink = document.getElementById('drink').value;
-        let li = document.createElement('li');
-        
-        
-        // function calc(x, y) {
-        //   let fpDivide = x / y;
-        //   console.log(fpDivide)
-        // }
-        // calc(food, people)
         let fpDivide = food / people;
         let alalpDivide = alcohol / alcoholPeople;
         let drdrpDivide = drink / drinkPeople;
-
         let fpalPlus = fpDivide + alalpDivide;
-        li.textContent = fpalPlus;
-        root.appendChild(li);
+        let fpdrPlus = fpDivide + drdrpDivide; 
+        
+        function resultLI(a) {
+          let li = document.createElement('li');
+          li.textContent = a
+          root.appendChild(li);
+        }
 
-        let fpdrPlus = fpDivide + drdrpDivide;        
-        li.textContent = fpdrPlus;
-        root.appendChild(li);
+        resultLI(fpalPlus);
+        resultLI(fpdrPlus);
+        
         
       });
     </script>
