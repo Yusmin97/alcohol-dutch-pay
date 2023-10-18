@@ -30,8 +30,8 @@
         let fpDivide = food / people;
         let alalpDivide = alcohol / alcoholPeople;
         let drdrpDivide = drink / drinkPeople;
-        let fpalPlus = Math.floor(fpDivide + alalpDivide);
-        let fpdrPlus = Math.floor(fpDivide + drdrpDivide);  
+        let fpalPlus = Math.round((fpDivide + alalpDivide)/10) * 10;
+        let fpdrPlus = Math.round((fpDivide + drdrpDivide)/10) * 10;  
         
         function resultLI(a) {
           let li = document.createElement('li');
