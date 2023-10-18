@@ -18,26 +18,27 @@
     </div>
     <script>
       const root = document.getElementById('root');
-      const alcoholPeople = document.getElementById('alcoholPeople');
-      const alcohol = document.getElementById('alcohol');
-      const drinkPeople = document.getElementById('drinkPeople');
-      const drink = document.getElementById('drink');
       const btn = document.getElementById('btn');
 
       btn.addEventListener('click', (event) => {
-        const people = document.getElementById('people').value;
-        const food = document.getElementById('food').value;
-        // root = food / people;
-        alert(food / people);
-        console.log(food);
-        console.log(people);
-        // const li = document.createElement('li');
-        // let numString = main.value;
-        // li.textContent = numString;
+        let people = document.getElementById('people').value;
+        let food = document.getElementById('food').value;
+        let alcoholPeople = document.getElementById('alcoholPeople').value;
+        let alcohol = document.getElementById('alcohol').value;
+        let drinkPeople = document.getElementById('drinkPeople').value;
+        let drink = document.getElementById('drink').value;
+        // let li = document.createElement('li');
+        // li.textContent = apalDivide;
         // root.appendChild(li);
+        
+        let fpDivide = food / people;
+        // alert(fpDivide)
+        let alalpDivide = alcohol / alcoholPeople;
 
-        // document.getElementById('root').innerText = root
-        console.log(root);
+        let drdrpDivide = drink / drinkPeople;
+        
+        let fpalplus = fpDivide + alalpDivide
+        
       });
     </script>
   </body>
