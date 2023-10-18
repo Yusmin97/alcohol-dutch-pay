@@ -9,12 +9,12 @@
   <body>
     <div id="root">
       <div>
-        <input type="number" min="2" max="20" id="people" placeholder="전체 인원" />
-        <input type="number" id="food" placeholder="음식" />
-        <input type="number" min="2" max="20" id="alcoholPeople" placeholder="술 인원" />
-        <input type="number" id="alcohol" placeholder="술값" value="술" />
-        <input type="number" min="2" max="20" id="drinkPeople" placeholder="음료 인원" />
-        <input type="number" id="drink" placeholder="음료값" value="음료" />
+        <input type="number" min="2" max="20" id="people" placeholder="전체 인원" /> 명
+        <input type="number" id="food" placeholder="음식 값" /> 원 <br />
+        <input type="number" min="2" max="20" id="alcoholPeople" placeholder="술 인원" /> 명
+        <input type="number" id="alcohol" placeholder="술 값" value="술" /> 원 <br />
+        <input type="number" min="2" max="20" id="drinkPeople" placeholder="음료 인원" /> 명
+        <input type="number" id="drink" placeholder="음료 값" value="음료" /> 원 <br />
         <input type="button" id="btn" value="버튼" />
       </div>
     </div>
@@ -36,14 +36,26 @@
         let fpalPlus = Math.round((fpDivide + alalpDivide) / 10) * 10;
         let fpdrPlus = Math.round((fpDivide + drdrpDivide) / 10) * 10;
 
-        function resultLI(a) {
-          let li = document.createElement('li');
-          li.textContent = a;
-          root.appendChild(li);
+        function resultDiv(result) {
+          let divGet = document.createElement('div');
+          root.appendChild(divGet);
+          divGet.textContent = result;
+          function divstyle(styles) {
+            styles.style.width = '100vw';
+            styles.style.height = '100vh';
+            styles.style.display = 'flex';
+            styles.style.backgroundColor = 'blue'
+            styles.style.flexDirection = 'column';
+            styles.style.justifyContent = 'center';
+            styles.style.position = 'absolute';
+            // styles.style.fontSize = '4rem';
+            styles.style.textAlign = 'center';
+          }
+          divstyle(divGet);
         }
 
-        resultLI('술 마신 사람은 ' + fpalPlus + '원 보내세요');
-        resultLI('음료 마신 사람은 ' + fpdrPlus + '원 보내세요');
+        resultDiv(`술 마신 사람은 ${fpalPlus} 원 보내세요 음료 마신 사람은 ${fpdrPlus} 원 보내세요`);
+        // resultDiv('음료 마신 사람은 ' + fpdrPlus + '원 보내세요');
       });
     </script>
   </body>
