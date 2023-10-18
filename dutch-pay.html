@@ -30,8 +30,8 @@
         let fpDivide = food / people;
         let alalpDivide = alcohol / alcoholPeople;
         let drdrpDivide = drink / drinkPeople;
-        let fpalPlus = fpDivide + alalpDivide;
-        let fpdrPlus = fpDivide + drdrpDivide; 
+        let fpalPlus = Math.floor(fpDivide + alalpDivide);
+        let fpdrPlus = Math.floor(fpDivide + drdrpDivide);  
         
         function resultLI(a) {
           let li = document.createElement('li');
@@ -39,8 +39,8 @@
           root.appendChild(li);
         }
 
-        resultLI(fpalPlus);
-        resultLI(fpdrPlus);
+        resultLI('술 마신 사람은 ' + fpalPlus + '원 보내세요');
+        resultLI('음료 마신 사람은 ' + fpdrPlus + '원 보내세요');
         
         
       });
