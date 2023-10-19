@@ -36,25 +36,32 @@
         let fpalPlus = Math.round((fpDivide + alalpDivide) / 10) * 10;
         let fpdrPlus = Math.round((fpDivide + drdrpDivide) / 10) * 10;
 
-        function resultDiv(result) {
+        function resultDiv(a) {
           let divGet = document.createElement('div');
+          divGet.setAttribute('id', 'getdiv');
+          let divId = document.getElementById('getdiv');
           root.appendChild(divGet);
-          divGet.textContent = result;
+          let divLi = document.createElement('li');
+          divGet.appendChild(divLi);
+          divLi.textContent = a;
+
           function divstyle(styles) {
             styles.style.width = '100vw';
             styles.style.height = '100vh';
             styles.style.display = 'flex';
-            styles.style.backgroundColor = 'blue'
+            styles.style.backgroundColor = 'darkgray';
             styles.style.flexDirection = 'column';
             styles.style.justifyContent = 'center';
             styles.style.position = 'absolute';
-            // styles.style.fontSize = '4rem';
-            styles.style.textAlign = 'center';
+            // styles.style.fontSize = '2rem';
+            // styles.style.textAlign = 'center';
           }
           divstyle(divGet);
+          // resultLi('술 마신 사람은 ' + fpalPlus + '원 보내세요');
+          // resultLi('음료 마신 사람은 ' + fpdrPlus + '원 보내세요');
         }
-
-        resultDiv(`술 마신 사람은 ${fpalPlus} 원 보내세요 음료 마신 사람은 ${fpdrPlus} 원 보내세요`);
+        resultDiv('술 마신 사람은 ' + fpalPlus + '원 보내세요');
+        resultDiv('음료 마신 사람은 ' + fpdrPlus + '원 보내세요')
         // resultDiv('음료 마신 사람은 ' + fpdrPlus + '원 보내세요');
       });
     </script>
