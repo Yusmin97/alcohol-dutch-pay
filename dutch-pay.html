@@ -38,13 +38,12 @@
 
         function resultDiv(a) {
           let divGet = document.createElement('div');
-          divGet.setAttribute('id', 'getdiv');
-          let divId = document.getElementById('getdiv');
           root.appendChild(divGet);
-          let divLi = document.createElement('li');
-          divGet.appendChild(divLi);
-          divLi.textContent = a;
-
+          function resultLi(b) {
+            let divLi = document.createElement('li');
+            divGet.appendChild(divLi);
+            divLi.textContent = b;
+          }
           function divstyle(styles) {
             styles.style.width = '100vw';
             styles.style.height = '100vh';
@@ -52,17 +51,18 @@
             styles.style.backgroundColor = 'darkgray';
             styles.style.flexDirection = 'column';
             styles.style.justifyContent = 'center';
+            styles.style.alignItems = 'center';
             styles.style.position = 'absolute';
             // styles.style.fontSize = '2rem';
             // styles.style.textAlign = 'center';
           }
           divstyle(divGet);
-          // resultLi('술 마신 사람은 ' + fpalPlus + '원 보내세요');
-          // resultLi('음료 마신 사람은 ' + fpdrPlus + '원 보내세요');
+          resultLi('술 마신 사람은 ' + fpalPlus + '원 보내세요');
+          resultLi('음료 마신 사람은 ' + fpdrPlus + '원 보내세요');
         }
-        resultDiv('술 마신 사람은 ' + fpalPlus + '원 보내세요');
-        resultDiv('음료 마신 사람은 ' + fpdrPlus + '원 보내세요')
+        // resultDiv('술 마신 사람은 ' + fpalPlus + '원 보내세요');
         // resultDiv('음료 마신 사람은 ' + fpdrPlus + '원 보내세요');
+        resultDiv()
       });
     </script>
   </body>
