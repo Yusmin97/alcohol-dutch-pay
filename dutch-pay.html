@@ -39,10 +39,11 @@
         function resultDiv(a) {
           let divGet = document.createElement('div');
           root.appendChild(divGet);
-          function resultLi(b) {
+          function resultLi(liText) {
             let divLi = document.createElement('li');
             divGet.appendChild(divLi);
-            divLi.textContent = b;
+            divLi.textContent = liText;
+            divLi.style.listStyle = 'none'
           }
           function divstyle(styles) {
             styles.style.width = '100vw';
